@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ReactElement, ReactNode } from "react";
+import Header from "./Header";
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,6 +23,7 @@ export default function CustomLayout({
         <meta name="keywords" content={keywords} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <main className="container mx-auto my-7">{children}</main>
     </div>
   );
