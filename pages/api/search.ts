@@ -13,8 +13,10 @@ export default function handler(
 ) {
   let posts;
   if (process.env.NODE_ENV === "production") {
-    // @todo -- fetch from cache
+    // Fetch from cache
+    posts = require("../../cache/data").posts;
   } else {
+    console.log("develoment");
     const files = fs.readdirSync(path.join("posts"));
     posts = files.map((filename) => {
       //getting the slug as well
@@ -31,7 +33,7 @@ export default function handler(
     });
   }
   const results = posts?.filter(
-    ({ frontmatter: { title, excerpt, category } }) =>
+    ({ frontmatter: { title, excerpt, category } }: any) =>
       title.toLowerCase().indexOf(req.query.q) != -1 ||
       excerpt.toLowerCase().indexOf(req.query.q) != -1 ||
       category.toLowerCase().indexOf(req.query.q) != -1
