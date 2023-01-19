@@ -1,6 +1,6 @@
 import CustomLayout from "@components/CustomLayout";
 import Link from "next/link";
-import { PostType } from "@types/index";
+import { PostType } from "@appTypes/index";
 import Post from "@components/Post";
 import { getPosts } from "@utils/posts";
 

@@ -7,7 +7,7 @@ import { marked } from "marked";
 import Link from "next/link";
 import CustomLayout from "@components/CustomLayout";
 import CategoryLabel from "@components/CategoryLabel";
-import { FrontMatterType, SlugType } from "@types/index";
+import { FrontMatterType, SlugType } from "@appTypes/index";
 
 interface PostPageProps {
   frontmatter: FrontMatterType;

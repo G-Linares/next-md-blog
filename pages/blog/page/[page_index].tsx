@@ -5,7 +5,7 @@ import Pagination from "@components/Pagination";
 import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
 import { POST_PER_PAGE } from "@config/index";
-import { PostType } from "@types/index";
+import { PostType } from "@appTypes/index";
 import { getPosts } from "@utils/posts";
 
 interface BlogPageProps {

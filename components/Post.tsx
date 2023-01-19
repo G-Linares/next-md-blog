@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FrontMatterType, SlugType } from "@types/index";
+import { FrontMatterType, SlugType } from "@appTypes/index";
 import CategoryLabel from "./CategoryLabel";
 
 interface PostProps {

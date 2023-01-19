@@ -1,5 +1,5 @@
 import React from "react";
-import { FrontMatterType, SlugType } from "@types/index";
+import { FrontMatterType, SlugType } from "@appTypes/index";
 import Post from "@components/Post";
 
 type SearchResultsProps = {

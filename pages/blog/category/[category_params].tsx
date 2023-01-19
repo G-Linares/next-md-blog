@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import CustomLayout from "@components/CustomLayout";
-import { PostType } from "@types/index";
+import { PostType } from "@appTypes/index";
 import Post from "@components/Post";
 import CategoryList from "@components/CategoryList";
 import { getPosts } from "@utils/posts";
