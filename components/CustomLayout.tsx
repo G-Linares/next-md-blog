@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { ReactElement, ReactNode } from "react";
 import Header from "./Header";
+import Search from "./Search";
 
 interface LayoutProps {
   children: ReactNode;
@@ -24,6 +25,7 @@ export default function CustomLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Search />
       <main className="container mx-auto my-7">{children}</main>
     </div>
   );
