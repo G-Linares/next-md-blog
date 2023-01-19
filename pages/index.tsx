@@ -1,11 +1,8 @@
 import CustomLayout from "@components/CustomLayout";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import Link from "next/link";
 import { PostType } from "@types/index";
-import { sortByStartDate } from "@utils/index";
 import Post from "@components/Post";
+import { getPosts } from "@utils/posts";
 
 interface HomeProps {
   posts: PostType[];
@@ -33,23 +30,7 @@ export default function Home({ posts }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(path.join("posts"));
-
-  const posts = files.map((filename) => {
-    const slug = filename.replace(".md", "");
-    const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
-      "utf-8"
-    );
-    // gray matter will convert a font-matter string to an object
-    const { data: frontmatter } = matter(markdownWithMeta);
-    return {
-      slug,
-      frontmatter
-    };
-  });
-
   return {
-    props: { posts: posts.sort(sortByStartDate).slice(0, 6) }
+    props: { posts: getPosts().slice(0, 6) }
   };
 }
